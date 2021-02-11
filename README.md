@@ -1,15 +1,17 @@
 # AWS CLI Command Cheatsheet
 
-Useful commands for AWS CLI
+Useful commands to use with the AWS CLI.
 
 **Note: Append `--output text` to get text representation.**
 
-# CloudFormation
+---
+## CloudFormation
 
 #### Query for CloudFormation template bucket
 `aws s3api list-buckets --query "Buckets[?starts_with(Name, 'cf-templates-')].Name"`
 
-# S3
+---
+## S3
 
 #### Query for CloudFormation Stack Resource
 `aws cloudformation describe-stack-resources --stack-name <stackname> --query "StackResources[?LogicalResourceId=='<logicalid>'].PhysicalResourceId"`
