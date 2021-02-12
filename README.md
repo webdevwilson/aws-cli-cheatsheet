@@ -22,3 +22,15 @@ aws cloudformation describe-stack-resources --stack-name <stackname> --query "St
 ```
 aws cloudformation describe-stacks --stack-name <stackname> --query "Stacks[0].Outputs[?OutputKey=='<outputname>'].OutputValue"
 ```
+
+## SSM
+
+#### Query for Encrypted SSM Parameter
+```
+aws ssm get-parameter --name <parametername> --with-decryption --query Parameter.Value
+```
+
+#### Query for Unencrypted SSM Parameter
+```
+aws ssm get-parameter --name <parametername> --query Parameter.Value
+```
