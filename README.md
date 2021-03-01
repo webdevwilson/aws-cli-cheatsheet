@@ -8,7 +8,11 @@ Useful commands to use with the AWS CLI.
 
 #### Query for CloudFormation template bucket
 ```
+# no region specified
 aws s3api list-buckets --query "Buckets[?starts_with(Name, 'cf-templates-')].Name"
+
+# with region
+aws s3api list-buckets --query "Buckets[?starts_with(Name, 'cf-templates-') && ends_with(Name, 'us-east-1')].Name"
 ```
 
 #### Query for CloudFormation Stack Resource
